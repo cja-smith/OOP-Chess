@@ -8,9 +8,8 @@ class Board():
         self.board = [[[] for i in range(8)] for i in range(8)]
 
         # Set up black pieces, then white pieces
+        # I had hoped to use a for loop to add in the Pawns, but unable to do so?
 
-        for square in self.board[1]:
-            square = pieces.Pawn(colour=False)
 
         self.board[0][0] = pieces.Rook(colour=False)
         self.board[0][1] = pieces.Knight(colour=False)
@@ -21,8 +20,8 @@ class Board():
         self.board[0][6] = pieces.Knight(colour=False)
         self.board[0][7] = pieces.Rook(colour=False)
 
-        for square in self.board[1]:
-            square = pieces.Pawn(colour=True)
+        for i in self.board[1]:
+            i = pieces.Pawn(colour=False)
 
         self.board[7][0] = pieces.Rook(colour=True)
         self.board[7][1] = pieces.Knight(colour=True)
@@ -32,7 +31,6 @@ class Board():
         self.board[7][5] = pieces.Bishop(colour=True)
         self.board[7][6] = pieces.Knight(colour=True)
         self.board[7][7] = pieces.Rook(colour=True)
-
 
     def print_board(self):
         row = '+---+---+---+---+---+---+---+---+\n'
